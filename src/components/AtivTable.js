@@ -35,11 +35,10 @@ const headerCellStyle = {
 };
 
 // Componente AtivTable
-function AtivTable({ games, handleDeleteGame, setShowForm, handleEditGame}) {
+function AtivTable({ games, handleDeleteGame, setShowForm}) {
   // Estados locais para controlar a abertura e o fechamento do diálogo de confirmação
   const [openDialog, setOpenDialog] = useState(false);
   const [gameToDelete, setGameToDelete] = useState(null);
-  //const [editingGame, setEditingGame] = useState(null);
 
   // Função para confirmar a exclusão de um jogo
   const handleConfirmDelete = () => {
@@ -56,21 +55,6 @@ function AtivTable({ games, handleDeleteGame, setShowForm, handleEditGame}) {
     setOpenDialog(true);
   };
 
-/*   const handleEdit = (game) => {
-    handleEditGame(game);
-  };
-
-  const handleEditSave = () => {
-    // Chame a função para editar o jogo no componente pai
-    handleEditGame(editingGame);
-    setEditingGame(null); // Limpa o estado de edição
-  };
-
-  const handleEditCancel = () => {
-    setEditingGame(null); // Cancela a edição e limpa o estado de edição
-  };
-
- */
 
   return (
     <div>
@@ -146,33 +130,6 @@ function AtivTable({ games, handleDeleteGame, setShowForm, handleEditGame}) {
                       >
                       Editar
                     </Button>
-
-
-
-{/* 
-                    {editingGame && editingGame.id === game.id && (
-                      // Mostra botões de salvar/cancelar durante a edição
-                      <>
-                        <Button
-                          variant="outlined"
-                          color="success"
-                          onClick={handleEditSave}
-                        >
-                          Salvar
-                        </Button>
-                        <Button
-                          variant="outlined"
-                          color="error"
-                          onClick={handleEditCancel}
-                        >
-                          Cancelar
-                        </Button>
-                      </>
-                    )}
-
- */}
-
-
 
                   </TableCell>
 
